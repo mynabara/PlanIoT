@@ -1,12 +1,15 @@
 # PlanIoT
 
 ## About
-PlanIoT is an IoT Project written by Myna Obara.
+PlanIoT is an IoT Project to irrigate plants using Arduino, written by Myna Obara.
 
 Made for UNIVERSIDADE PRESBITERIANA MACKENZIE - Faculdade de Computação e Informática (FCI).
 
-I would like to thank professor Wallace Rodrigues de Santana for his support in this project.
+I would like to thank professor Wallace Rodrigues de Santana for his support in this project - PlanIoT is my first IoT project and I am proud of what I
+have accomplished.
 
+
+## Components
 The components used in this project can be seen in this Fritzing model:
 
 ![PlanIoT_Myna_bb](https://user-images.githubusercontent.com/26822745/169669718-bad9fbea-d507-4554-b044-3bce204752d7.png)
