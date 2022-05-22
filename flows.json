@@ -1,0 +1,681 @@
+[
+    {
+        "id": "352549ad7b1cc899",
+        "type": "tab",
+        "label": "PlantIoT",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "11e50eb939478253",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "io.adafruit.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "b4a7fc290e839d1e",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#0dcfd9",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "reset": false
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#0dcfd9",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0dcfd9",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#3febf3",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0dcfd9",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "d41d3f0a65943a45",
+        "type": "ui_tab",
+        "name": "PlanIoT",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "1a423d48b30ef7c7",
+        "type": "ui_group",
+        "name": " Soil Status Update",
+        "tab": "d41d3f0a65943a45",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "80b99021.9a4",
+        "type": "node-red-contrib-whatsapp-cmb-account",
+        "name": "WhatsApp API Account"
+    },
+    {
+        "id": "e6955c4599814d37",
+        "type": "arduino-board",
+        "device": "COM6"
+    },
+    {
+        "id": "d1e581701bc02604",
+        "type": "twitter-credentials",
+        "screen_name": "PlanIoTProject"
+    },
+    {
+        "id": "ab647175dee5be15",
+        "type": "mqtt in",
+        "z": "352549ad7b1cc899",
+        "name": "",
+        "topic": "mynabara/f/onoff",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "11e50eb939478253",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 100,
+        "y": 860,
+        "wires": [
+            [
+                "b6b76cb27e52cd09",
+                "daa91d3808f412e2",
+                "805e08f13685a8d2",
+                "984c2f93c2b5116f"
+            ]
+        ]
+    },
+    {
+        "id": "b6b76cb27e52cd09",
+        "type": "function",
+        "z": "352549ad7b1cc899",
+        "name": "",
+        "func": "if(msg.payload==\"1\")\n     return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 920,
+        "wires": [
+            [
+                "90eae997.db5198"
+            ]
+        ]
+    },
+    {
+        "id": "3b136d70ba738e38",
+        "type": "mqtt out",
+        "z": "352549ad7b1cc899",
+        "name": "",
+        "topic": "mynabara/f/onoff",
+        "qos": "1",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "11e50eb939478253",
+        "x": 490,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "90eae997.db5198",
+        "type": "node-red-contrib-whatsapp-cmb-send-message",
+        "z": "352549ad7b1cc899",
+        "name": "Mensagem On",
+        "account": "80b99021.9a4",
+        "text": "Regando planta",
+        "inputtypemessage": "str",
+        "rejectssl": false,
+        "x": 520,
+        "y": 920,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e85a9e048f14c1e4",
+        "type": "arduino out",
+        "z": "352549ad7b1cc899",
+        "name": "Pin 7 - Relay",
+        "pin": "7",
+        "state": "OUTPUT",
+        "arduino": "e6955c4599814d37",
+        "x": 510,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "3f1bb3a66c877c0e",
+        "type": "ui_button",
+        "z": "352549ad7b1cc899",
+        "name": "",
+        "group": "1a423d48b30ef7c7",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Regar planta",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "1",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 110,
+        "y": 600,
+        "wires": [
+            [
+                "3b136d70ba738e38"
+            ]
+        ]
+    },
+    {
+        "id": "3d75a61570b1289b",
+        "type": "ui_button",
+        "z": "352549ad7b1cc899",
+        "name": "",
+        "group": "1a423d48b30ef7c7",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "label": "Parar irrigação",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "payload": "0",
+        "payloadType": "num",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 120,
+        "y": 720,
+        "wires": [
+            [
+                "3b136d70ba738e38"
+            ]
+        ]
+    },
+    {
+        "id": "21c183cbac5ed3ac",
+        "type": "arduino in",
+        "z": "352549ad7b1cc899",
+        "name": "Soil Umidity",
+        "pin": "0",
+        "state": "ANALOG",
+        "arduino": "e6955c4599814d37",
+        "x": 110,
+        "y": 180,
+        "wires": [
+            [
+                "2153042b1df92366",
+                "aed7152f387d604f"
+            ]
+        ]
+    },
+    {
+        "id": "2153042b1df92366",
+        "type": "delay",
+        "z": "352549ad7b1cc899",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "30",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "15",
+        "rateUnits": "minute",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 340,
+        "y": 240,
+        "wires": [
+            [
+                "6174246bf8bb5fcf"
+            ]
+        ]
+    },
+    {
+        "id": "055d6a54a1beddac",
+        "type": "ui_chart",
+        "z": "352549ad7b1cc899",
+        "name": "",
+        "group": "1a423d48b30ef7c7",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Dry Chart",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "86400",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#00d5ff",
+            "#00ffaa",
+            "#ff7f0e",
+            "#2ca02c",
+            "#8bdfb4",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 540,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "544b8729e964f6d4",
+        "type": "arduino out",
+        "z": "352549ad7b1cc899",
+        "name": "Pin 12 - Led",
+        "pin": "12",
+        "state": "OUTPUT",
+        "arduino": "e6955c4599814d37",
+        "x": 510,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "daa91d3808f412e2",
+        "type": "function",
+        "z": "352549ad7b1cc899",
+        "name": "",
+        "func": "if(msg.payload==\"1\")\n\n     msg.payload = 0;\n\nelse msg.payload = 1;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 800,
+        "wires": [
+            [
+                "e85a9e048f14c1e4"
+            ]
+        ]
+    },
+    {
+        "id": "805e08f13685a8d2",
+        "type": "function",
+        "z": "352549ad7b1cc899",
+        "name": "",
+        "func": "if(msg.payload==\"0\")\n     return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 1000,
+        "wires": [
+            [
+                "dc89c9d00e3410fe"
+            ]
+        ]
+    },
+    {
+        "id": "dc89c9d00e3410fe",
+        "type": "node-red-contrib-whatsapp-cmb-send-message",
+        "z": "352549ad7b1cc899",
+        "name": "Mensagem Off",
+        "account": "80b99021.9a4",
+        "text": "Parando irrigação",
+        "inputtypemessage": "str",
+        "rejectssl": false,
+        "x": 520,
+        "y": 1000,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "984c2f93c2b5116f",
+        "type": "function",
+        "z": "352549ad7b1cc899",
+        "name": "",
+        "func": "if(msg.payload==\"1\")\n\n     msg.payload = 1;\n\nelse msg.payload = 0;\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 300,
+        "y": 860,
+        "wires": [
+            [
+                "544b8729e964f6d4"
+            ]
+        ]
+    },
+    {
+        "id": "87a8ed2a3cf02b1a",
+        "type": "ui_gauge",
+        "z": "352549ad7b1cc899",
+        "name": "",
+        "group": "1a423d48b30ef7c7",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Dry Gauge",
+        "label": "",
+        "format": "{{value}}",
+        "min": "325",
+        "max": "1023",
+        "colors": [
+            "#42d9ff",
+            "#00ffb3",
+            "#ff2465"
+        ],
+        "seg1": "550",
+        "seg2": "750",
+        "className": "",
+        "x": 550,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "4ef9b8ecf4b6e519",
+        "type": "debug",
+        "z": "352549ad7b1cc899",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 530,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "94f2838cdb721777",
+        "type": "mqtt in",
+        "z": "352549ad7b1cc899",
+        "name": "",
+        "topic": "mynabara/f/umidity",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "11e50eb939478253",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 400,
+        "wires": [
+            [
+                "e68d238f93a57323",
+                "e481166f93342333",
+                "e993b9eb726b584c"
+            ]
+        ]
+    },
+    {
+        "id": "6174246bf8bb5fcf",
+        "type": "mqtt out",
+        "z": "352549ad7b1cc899",
+        "name": "",
+        "topic": "mynabara/f/umidity",
+        "qos": "1",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "11e50eb939478253",
+        "x": 570,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "aed7152f387d604f",
+        "type": "delay",
+        "z": "352549ad7b1cc899",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "30",
+        "timeoutUnits": "minutes",
+        "rate": "1",
+        "nbRateUnits": "15",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 340,
+        "y": 100,
+        "wires": [
+            [
+                "4ef9b8ecf4b6e519",
+                "055d6a54a1beddac",
+                "87a8ed2a3cf02b1a"
+            ]
+        ]
+    },
+    {
+        "id": "e68d238f93a57323",
+        "type": "debug",
+        "z": "352549ad7b1cc899",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 330,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "e481166f93342333",
+        "type": "function",
+        "z": "352549ad7b1cc899",
+        "name": "",
+        "func": "if(msg.payload < 550)\n     return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 400,
+        "wires": [
+            [
+                "b4fdc7ce028c17a8"
+            ]
+        ]
+    },
+    {
+        "id": "b4fdc7ce028c17a8",
+        "type": "node-red-contrib-whatsapp-cmb-send-message",
+        "z": "352549ad7b1cc899",
+        "name": "Mensagem On",
+        "account": "80b99021.9a4",
+        "text": "Cuidado, sua planta está afogando!",
+        "inputtypemessage": "str",
+        "rejectssl": false,
+        "x": 520,
+        "y": 400,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e993b9eb726b584c",
+        "type": "function",
+        "z": "352549ad7b1cc899",
+        "name": "",
+        "func": "if(msg.payload > 750)\n     return msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 340,
+        "y": 460,
+        "wires": [
+            [
+                "9d444ff3318d4260"
+            ]
+        ]
+    },
+    {
+        "id": "9d444ff3318d4260",
+        "type": "node-red-contrib-whatsapp-cmb-send-message",
+        "z": "352549ad7b1cc899",
+        "name": "Mensagem On",
+        "account": "80b99021.9a4",
+        "text": "Atenção, sua planta está com sede!",
+        "inputtypemessage": "str",
+        "rejectssl": false,
+        "x": 520,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    }
+]
