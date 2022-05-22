@@ -32,7 +32,7 @@ You can make your own flows or use flows.json that is available in this reposito
 Friendly reminder: in this project, WhatsApp Callmebot is using my personal credentials, which means that the messages are sent to my number; if you want to receive these messagens in your WhatsApp, access: https://www.callmebot.com/blog/free-api-whatsapp-messages/
 
 ## Contact
-If you enjoyed this project or need some help, say "hi":
+If you enjoyed this project, need some help or have any suggestions, say "hi":
 
 mynabara@gmail.com
 
