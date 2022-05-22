@@ -29,7 +29,7 @@ After that, you access in your browser this URL: http://localhost:1880/
 
 You can make your own flows or use flows.json that is available in this repository.
 
-Friendly reminder: in this project, Adafruit and WhatsApp Callmebot needs personal credentials, which made me change those infos since I made this repository public. 
+Friendly reminder: in this project, Adafruit needs personal credential, which is blocked when they found it on the open web. That made me change those infos since I made this repository public. 
 
 You can access https://io.adafruit.com/ to use Adafruit MQTT and to receive messages in your WhatsApp, access https://www.callmebot.com/blog/free-api-whatsapp-messages/
 
