@@ -58,33 +58,34 @@ Adafruit_MQTT_Publish umidity = Adafruit_MQTT_Publish(&mqtt,  AIO_USERNAME "/fee
 // Setup a feed called 'onoff' for subscribing to changes.
 Adafruit_MQTT_Subscribe onoffbutton = Adafruit_MQTT_Subscribe(&mqtt, AIO_USERNAME "/feeds/onoff");
 
-/*************************** Sketch Code ************************************/
+/* To Use WiFi Shield Instead of MQTT
 
-/*//WiFi Shield
 #include <WiFi.h>
 char ssid[] = "2.4GHz_OBARA";     //  your network SSID (name) 
 char pass[] = "brasiliaamarela2021";    // your network password
-int status = WL_IDLE_STATUS;     // the Wifi radio's status*/
+int status = WL_IDLE_STATUS;     // the Wifi radio's status
+
+// attempt to connect using WPA2 encryption:
+  Serial.println("Attempting to connect to WPA network...");
+  status = WiFi.begin(ssid, pass);
+
+// if you're not connected, stop here:
+  if ( status != WL_CONNECTED) { 
+    Serial.println("Couldn't get a wifi connection");
+    while(true);
+  } 
+// if you are connected, print out info about the connection:
+  else {
+    Serial.println("Connected to network");
+  }
+
+************************************/
 
 //Arduino pins
 float analogOutput = 0;
 float gauge = 0;
 int soilSensor = 0;
 
-  /*//WiFi Shield
-  // attempt to connect using WPA2 encryption:
-  Serial.println("Attempting to connect to WPA network...");
-  status = WiFi.begin(ssid, pass);
-
-  // if you're not connected, stop here:
-  if ( status != WL_CONNECTED) { 
-    Serial.println("Couldn't get a wifi connection");
-    while(true);
-  } 
-  // if you are connected, print out info about the connection:
-  else {
-    Serial.println("Connected to network");
-  }*/
 
 void setup() {
   
@@ -132,14 +133,19 @@ void loop() {
   Serial.println("Valor sensor");
   Serial.println(analogOutput);
 
-//  if (soilSensor == HIGH) { // soilSensor == HIGH = 1 -> sem umidade
-//    digitalWrite(pinRelay, LOW); // pinRelay, LOW -> vazão de água aberta
-//    delay(5000); // 5000 = 5seg -> tempo para irrigar e fazer a próxima leitura
-//  }
-//  else { // soilSensor == LOW = 0 -> com umidade
-//    digitalWrite(pinRelay, HIGH); // pinRelay, HIGH -> vazão de água fechada
-//    delay(15000); // ideal 900000 = 15min; teste 150000 = 15seg -> pode-se esperar mais para a próxima leitura pois já há umidade    
-//  }
+ 
+  /* This part is more usefull if you just want an automated irrigation without internet connection
+  
+  if (soilSensor == HIGH) { // soilSensor == HIGH = 1 -> sem umidade
+    digitalWrite(pinRelay, LOW); // pinRelay, LOW -> vazão de água aberta
+    delay(5000); // 5000 = 5seg -> tempo para irrigar e fazer a próxima leitura
+  }
+  else { // soilSensor == LOW = 0 -> com umidade
+    digitalWrite(pinRelay, HIGH); // pinRelay, HIGH -> vazão de água fechada
+    delay(15000); // ideal 900000 = 15min; teste 150000 = 15seg -> pode-se esperar mais para a próxima leitura pois já há umidade    
+  }
+  
+  ************************************/
 
   
   // Now we can publish stuff!
