@@ -232,7 +232,7 @@
         "id": "90eae997.db5198",
         "type": "node-red-contrib-whatsapp-cmb-send-message",
         "z": "352549ad7b1cc899",
-        "name": "Mensagem On",
+        "name": "Regando planta",
         "account": "80b99021.9a4",
         "text": "Regando planta",
         "inputtypemessage": "str",
@@ -451,12 +451,12 @@
         "id": "dc89c9d00e3410fe",
         "type": "node-red-contrib-whatsapp-cmb-send-message",
         "z": "352549ad7b1cc899",
-        "name": "Mensagem Off",
+        "name": "Parando irrigação",
         "account": "80b99021.9a4",
         "text": "Parando irrigação",
         "inputtypemessage": "str",
         "rejectssl": false,
-        "x": 520,
+        "x": 530,
         "y": 1000,
         "wires": [
             []
@@ -633,12 +633,12 @@
         "id": "b4fdc7ce028c17a8",
         "type": "node-red-contrib-whatsapp-cmb-send-message",
         "z": "352549ad7b1cc899",
-        "name": "Mensagem On",
+        "name": "Cuidado, sua planta está afogando!",
         "account": "80b99021.9a4",
         "text": "Cuidado, sua planta está afogando!",
         "inputtypemessage": "str",
         "rejectssl": false,
-        "x": 520,
+        "x": 580,
         "y": 400,
         "wires": [
             []
@@ -667,12 +667,12 @@
         "id": "9d444ff3318d4260",
         "type": "node-red-contrib-whatsapp-cmb-send-message",
         "z": "352549ad7b1cc899",
-        "name": "Mensagem On",
+        "name": "Atenção, sua planta está com sede!",
         "account": "80b99021.9a4",
         "text": "Atenção, sua planta está com sede!",
         "inputtypemessage": "str",
         "rejectssl": false,
-        "x": 520,
+        "x": 580,
         "y": 460,
         "wires": [
             []
