@@ -24,6 +24,7 @@ Components used in this prototype:
 - USB A-B cable
 - Power supply 12V/1A
 - P4 female plug connector
+- 12V 20 AWG cable
 
 ## Versions
 PlanIoT_v1 file contains the first Arduino code I made to test the components used in this project.
