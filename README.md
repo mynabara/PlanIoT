@@ -7,6 +7,7 @@ Made for UNIVERSIDADE PRESBITERIANA MACKENZIE - Faculdade de Computação e Info
 
 I would like to thank professor Wallace Rodrigues de Santana for his support in this project, which is my first IoT project.
 
+To have more details about this project, access: https://docs.google.com/document/d/1xpW0xN1MINzceFFudWUqfyrf_Rl9AdYH/edit?usp=sharing&ouid=112598686229944193808&rtpof=true&sd=true
 
 ## Components
 The components used in this project can be seen in this Fritzing model:
@@ -43,6 +44,9 @@ You can make your own flows or use flows.json that is available in this reposito
 Friendly reminder: in this project, Adafruit needs personal credential, which is blocked when they found it on the open web. That made me change those infos since I made this repository public. 
 
 You can access https://io.adafruit.com/ to use Adafruit MQTT and to receive messages in your WhatsApp, access https://www.callmebot.com/blog/free-api-whatsapp-messages/
+
+This image can help you to understand the whole function of PlanIoT:
+![MACK - Myna (14)](https://user-images.githubusercontent.com/26822745/170807552-bd5c024f-9388-4af9-b601-bfef2c243a9b.jpg)
 
 To see how the prototype works, you can watch the videos of each version of this project:
 - v1: https://youtu.be/WYapYRavuXY
