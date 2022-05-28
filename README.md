@@ -7,7 +7,8 @@ Made for UNIVERSIDADE PRESBITERIANA MACKENZIE - Faculdade de Computação e Info
 
 I would like to thank professor Wallace Rodrigues de Santana for his support in this project, which is my first IoT project.
 
-To have more details about this project, access: https://docs.google.com/document/d/1xpW0xN1MINzceFFudWUqfyrf_Rl9AdYH/edit?usp=sharing&ouid=112598686229944193808&rtpof=true&sd=true
+For more details about this project, access this document (it is in Portuguese): 
+https://docs.google.com/document/d/1xpW0xN1MINzceFFudWUqfyrf_Rl9AdYH/edit?usp=sharing&ouid=112598686229944193808&rtpof=true&sd=true
 
 ## Components
 The components used in this project can be seen in this Fritzing model:
