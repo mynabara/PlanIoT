@@ -47,7 +47,7 @@ Friendly reminder: in this project, Adafruit needs personal credential, which is
 You can access https://io.adafruit.com/ to use Adafruit MQTT and to receive messages in your WhatsApp, access https://www.callmebot.com/blog/free-api-whatsapp-messages/
 
 This image can help you to understand the whole function of PlanIoT:
-![MACK - Myna (14)](https://user-images.githubusercontent.com/26822745/170807552-bd5c024f-9388-4af9-b601-bfef2c243a9b.jpg)
+![MACK - Myna (15)](https://user-images.githubusercontent.com/26822745/170808312-241fd492-c537-4f69-a731-78249ebb597f.jpg)
 
 To see how the prototype works, you can watch the videos of each version of this project:
 - v1: https://youtu.be/WYapYRavuXY
